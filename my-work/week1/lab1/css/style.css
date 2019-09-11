@@ -1,5 +1,16 @@
+body{
+  background-color: #2a2726;
+  color: 	#ede5d7;
+  font-family: 'Livvic', sans-serif;
+}
+
+h4{
+  font-size: 30px;
+  margin: 0px
+}
+
 .bar{
   height: 50px;
-  background-color: lightgrey;
+  background-color: #f1792f;
   margin-bottom: 10px;
 }
