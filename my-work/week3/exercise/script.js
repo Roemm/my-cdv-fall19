@@ -1,12 +1,23 @@
-function rad(datapoint){
+function xp(datapoint, i){
+  let x = 400 + datapoint.time * 30 * Math.cos(i*7.5);
+  // let y = datapoint.time * 100 * Math.sin(i*7.5);
+  console.log(x);
   // console.log(datapoint);
-  return datapoint.time * 100 //returns value of the datapoint multiplied with 50
+  return x;
 }
 
-function randomNumber(){
-  console.log(Math.sin(Math.random()*360)*50);
-  return 400 + Math.sin(Math.random()*360)*100; //returns a random number between 0 and 800;
+function yp(datapoint, i){
+  // let x = datapoint.time * 100 * Math.cos(i*7.5);
+  let y = 200 + datapoint.time * 30 * Math.sin(i*7.5);
+  // console.log(x);
+  // console.log(datapoint);
+  return y;
 }
+
+// function randomNumber(){
+//   console.log(Math.sin(Math.random()*360)*50);
+//   return 400 + Math.sin(Math.random()*360)*100;
+// }
 
 function gotData(newdata){
   // console.log(newdata);
@@ -20,9 +31,9 @@ function gotData(newdata){
 
   viz.selectAll('line').data(newdata).enter().append('line')
                                             .attr('x1', 400)
-                                            .attr('y1', 400)
-                                            .attr('x2', rad )
-                                            .attr('y2',randomNumber)
+                                            .attr('y1', 200)
+                                            .attr('x2', xp)
+                                            .attr('y2',yp)
                                             .attr('stroke', 'white')
                                             .attr('stroke-width', 2)
 }
