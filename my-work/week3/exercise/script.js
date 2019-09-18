@@ -1,6 +1,11 @@
-function justChecking(datapoint){
-  console.log(datapoint.time);
-  return datapoint.time*50 //returns value of the datapoint multiplied with 50
+function rad(datapoint){
+  // console.log(datapoint);
+  return datapoint.time * 100 //returns value of the datapoint multiplied with 50
+}
+
+function randomNumber(){
+  console.log(Math.sin(Math.random()*360)*50);
+  return 400 + Math.sin(Math.random()*360)*100; //returns a random number between 0 and 800;
 }
 
 function gotData(newdata){
@@ -13,10 +18,13 @@ function gotData(newdata){
                     .attr('height', 800)
   ;
 
-  viz.selectAll('circle').data(newdata).enter().append('circle')
-                                            .attr('cx', justChecking)
-                                            .attr('cy', 400)
-                                            .attr('r', 20)
+  viz.selectAll('line').data(newdata).enter().append('line')
+                                            .attr('x1', 400)
+                                            .attr('y1', 400)
+                                            .attr('x2', rad )
+                                            .attr('y2',randomNumber)
+                                            .attr('stroke', 'white')
+                                            .attr('stroke-width', 2)
 }
 
 d3.json("data.json").then(gotData);
