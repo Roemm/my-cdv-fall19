@@ -1,0 +1,242 @@
+[
+    {
+        "date": "Wed",
+        "timeperiod": "9-11",
+        "time": "2"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "11-13",
+        "time": "4"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "13-15",
+        "time": "3"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "15-17",
+        "time": "5"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "17-19",
+        "time": "2"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "19-21",
+        "time": "5"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "21-23",
+        "time": "4"
+    },
+    {
+        "date": "Wed",
+        "timeperiod": "23-01",
+        "time": "1"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "9-11",
+        "time": "1"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "11-13",
+        "time": "5"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "13-15",
+        "time": "5"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "15-17",
+        "time": "6"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "17-19",
+        "time": "4"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "19-21",
+        "time": "3"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "21-23",
+        "time": "2"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "23-01",
+        "time": "2"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "9-11",
+        "time": "3"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "11-13",
+        "time": "7"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "13-15",
+        "time": "4"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "15-17",
+        "time": "3"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "17-19",
+        "time": "5"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "19-21",
+        "time": "3"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "21-23",
+        "time": "0"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "23-01",
+        "time": "1"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "9-11",
+        "time": "3"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "11-13",
+        "time": "6"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "13-15",
+        "time": "4"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "15-17",
+        "time": "8"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "17-19",
+        "time": "3"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "19-21",
+        "time": "3"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "21-23",
+        "time": "4"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "23-01",
+        "time": "2"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "9-11",
+        "time": "2"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "11-13",
+        "time": "4"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "13-15",
+        "time": "5"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "15-17",
+        "time": "4"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "17-19",
+        "time": "6"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "19-21",
+        "time": "2"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "21-23",
+        "time": "0"
+    },
+    {
+        "date": "Sun",
+        "timeperiod": "23-01",
+        "time": "1"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "9-11",
+        "time": "0"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "11-13",
+        "time": "2"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "13-15",
+        "time": "1"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "15-17",
+        "time": "4"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "17-19",
+        "time": "5"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "19-21",
+        "time": "6"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "21-23",
+        "time": "2"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "23-01",
+        "time": "7"
+    }
+]
