@@ -106,7 +106,7 @@ function gotData(incomingData){
   let viz = d3.select('body')
     .append('svg')
       .attr('width', 800)
-      .attr('height', 610)
+      .attr('height', 600)
       .attr('id', 'viz')
   ;
 
