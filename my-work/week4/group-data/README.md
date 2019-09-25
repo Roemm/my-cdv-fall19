@@ -12,3 +12,4 @@ I tried to create crescent moon shapes with my data. The logic behind is:
 - The opacity of the shape depends on the period of time, so it gradually fades out
 
 Here is the final outcome:
+![alt text](https://github.com/Roemm/my-cdv-fall19/blob/master/my-work/week4/group-data/screenshot.png)
