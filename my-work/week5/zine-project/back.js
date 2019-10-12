@@ -136,7 +136,7 @@ intro.append("text")
 ;
 
 intro.append("text")
-  .text('The pie chart on the left is just to show a weekly average data of the time I spend on the phone.')
+  .text('The pie chart on the left is just to show a weekly average percentage data of the time I spend on the phone.')
     .attr('fill', '#5E584C')
     .style('font-size', 25)
     .attr("x",10)
