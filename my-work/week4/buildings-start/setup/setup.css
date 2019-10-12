@@ -84,3 +84,13 @@ a.open-page{
   font-size: 0.8em;
   color: #ea0505;
 }
+
+#container{
+    font-family: 'Ruda', sans-serif;
+}
+
+#title{
+  color: #E8E1D3;
+  font-size: 70px;
+  text-align: center;
+}

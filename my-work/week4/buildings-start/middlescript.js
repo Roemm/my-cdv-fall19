@@ -1,63 +1,42 @@
 let w = 2400;
 let h = 800;
 
+let containerColor = '#DFD1B5';
+
 let viz = d3.select('#container')
   .append('svg')
     .attr('width', w)
     .attr('height', h)
-    .style('background-color', '#f8f1d5')
+    .style('background-color', containerColor)
+    .attr('class', 'chart')
 ;
+
+
 
 function getColor(datapoint){
   let idx = datapoint.index;
   let day = datapoint[0].data.values[idx].date;
   console.log(datapoint);
   if (day == 'Wed') {
-    return '#A89E6F';
+    return 'CCC6BA';
   }else if (day == 'Thu') {
-    return '#F7DE71';
+    return '#3D5578';
   }else if(day == 'Fri'){
-    return '#757059';
+    return '#A6A197';
   }else if(day == 'Sat'){
-    return '#C2B993';
+    return '#5F779C';
   }else if(day == 'Sun'){
-    return '#898F33';
+    return '#918367';
   }else if(day == 'Mon'){
-    return '#363329';
+    return '#9FAFC4';
   }
-  // console.log(datapoint);
-  // if (datapoint.date == 'Wed') {
-  //   return '#A89E6F';
-  // }else if (datapoint.date == 'Thu') {
-  //   return '#F7DE71';
-  // }else if(datapoint.date == 'Fri'){
-  //   return '#757059';
-  // }else if(datapoint.date == 'Sat'){
-  //   return '#C2B993';
-  // }else if(datapoint.date == 'Sun'){
-  //   return '#898F33';
-  // }else if(datapoint.date == 'Mon'){
-  //   return '#363329';
-  // }
 }
 
 
 function gotData(incomingData){
 
   //console.log(incomingData);
-  // timeperiodArray = [9-11, 11-13, 13-15, 15-17, 17-19, 19-21, 21-23, 23-01];
-
   let yearToDataConverter = d3.timeParse('%H-%H');
-
-  function findMin(d){
-    let time = d.timeperiod;
-    let properFormattedTime = yearToDataConverter(time);
-    // console.log(properFormattedTime);
-    return properFormattedTime;
-  }
-
-  let minTime = d3.min(incomingData, findMin);
-  // console.log(minTime);
 
   let alterDomainArray = d3.extent(incomingData, function(d){
     return yearToDataConverter(d.timeperiod);
@@ -66,8 +45,8 @@ function gotData(incomingData){
    // console.log(alterDomainArray);
 
   //create x and y axis
-  let xPadding = 50;
-  let xScale = d3.scaleTime().domain(alterDomainArray).range([xPadding, w-(xPadding*2)]);
+  let xPadding = 100;
+  let xScale = d3.scaleTime().domain(alterDomainArray).range([xPadding, w-(xPadding*1.5)]);
   // console.log(xScale('9-11'));
 
   let xAxis = d3.axisBottom(xScale);
@@ -76,14 +55,14 @@ function gotData(incomingData){
 
   xAxisGroup.call(xAxis);
 
-  let xAxisYPos = h - 30;
-  xAxisGroup.attr('transform', 'translate(0, '+xAxisYPos + ')');
+  let xAxisYPos = h - 50;
+  xAxisGroup.attr('transform', 'translate(0, '+xAxisYPos + ')')
+    .style('font-family', "'Ruda', sans-serif")
+    .style('font-size', 20)
+    .style('color', '#5E584C')
+    .style('stroke-width', 3)
+  ;
 
-
-
-
-  // var stackedData = d3.stack().keys('date')(incomingData);
-  // console.log(stackedData);
 
   //one array for each value of x-axis
   // console.log(incomingData);
@@ -109,7 +88,7 @@ function gotData(incomingData){
   let yScale = d3.scaleLinear()
     .domain([0,d3.max(stackedData[stackedData.length-1], function(d){
       return d[1];
-    })]).range([xAxisYPos , 30]);
+    })]).range([xAxisYPos , 50]);
 
   // let y = d3.scaleLinear()
   //     .domain([0, d3.max(incomingData, function(d) { return +d.time; })*1.2])
@@ -119,35 +98,62 @@ function gotData(incomingData){
   let yAxisGroup = viz.append('g').attr('class', 'yaxis');
 
   yAxisGroup.call(yAxis);
-  yAxisGroup.attr('transform', 'translate(' + xPadding + ', 0)');
+  yAxisGroup.attr('transform', 'translate(' + xPadding + ', 0)')
+    .style('font-family', "'Ruda', sans-serif")
+    .style('font-size', 20)
+    .style('color', '#5E584C')
+    .style('stroke-width', 3)
+  ;
 
   let vizGroup = viz.append("g").attr("class", "vizgroup");
 
   let curve = d3.area()
-  .x(function(d, i) {
-    console.log( xScale(yearToDataConverter(d.data.key)) );
-    return xScale(yearToDataConverter(d.data.key)) ;
-  })
-  .y0(function(d) { console.log(d);return yScale(d[0]); })
-  .y1(function(d) { return yScale(d[1]); })
+    .x(function(d, i) {
+      console.log( xScale(yearToDataConverter(d.data.key)) );
+      return xScale(yearToDataConverter(d.data.key)) + 2 ;
+    })
+    .y0(function(d) { return yScale(d[0]) -1; })
+    .y1(function(d) { return yScale(d[1]) -1; })
 
   vizGroup
-  .selectAll("path")
-   .data(stackedData)
-   .enter()
-   .append("path")
-     .style("fill", getColor)
-     .attr("d", curve)
+    .selectAll("path")
+    .data(stackedData)
+    .enter()
+    .append("path")
+      .style("fill", getColor)
+      .attr("d", curve)
+  ;
 
-  // let series = d3.stack().keys(incomingData.columns.slice(1))(incomingData);
-  // console.log(series);
-  //
-  // vizGroup
-  //   .selectAll("path")
-  //   .data(series)
-  //   .join("path")
-  //     .attr("fill", getColor)
-  //     .attr("d", curve)
+  let note = d3.select(".chart").append("g")
+      .attr("class","note")
+  ;
+  let notation = note
+    .selectAll('note')
+    .data(stackedData)
+    .enter()
+    .append('g', 'notation');
+    // .attr('class', 'notation');
+
+  notation.append('text')
+      .text(function(d){
+        let idx = d.index;
+        return d[0].data.values[idx].date;
+      })
+      .style('fill', '#5E584C')
+      .attr("x",2320)
+      .attr("y",function(d, i){return 145 + i*50;})
+      .style("text-anchor","end")
+      .style('font-size', 25)
+      .style('font-family', "'Ruda', sans-serif")
+  ;
+
+  notation.append('rect')
+    .attr("x",2330)
+    .attr("y",function(d, i){return 120 + i*50;})
+    .attr('width', 40)
+    .attr('height', 30)
+    .style('fill', getColor)
+  ;
 
 
 }

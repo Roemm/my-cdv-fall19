@@ -1,242 +1,242 @@
 [
     {
         "date": "Wed",
+        "timeperiod": "6-8",
+        "time": "9"
+    },
+    {
+        "date": "Wed",
         "timeperiod": "8-10",
-        "time": "2"
+        "time": "23"
     },
     {
         "date": "Wed",
         "timeperiod": "10-12",
-        "time": "4"
+        "time": "18"
     },
     {
         "date": "Wed",
         "timeperiod": "12-14",
-        "time": "3"
+        "time": "19"
     },
     {
         "date": "Wed",
         "timeperiod": "14-16",
-        "time": "5"
+        "time": "25"
     },
     {
         "date": "Wed",
         "timeperiod": "16-18",
-        "time": "2"
+        "time": "35"
     },
     {
         "date": "Wed",
         "timeperiod": "18-20",
-        "time": "5"
-    },
-    {
-        "date": "Wed",
-        "timeperiod": "20-22",
-        "time": "4"
-    },
-    {
-        "date": "Wed",
-        "timeperiod": "22-24",
-        "time": "1"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "8-10",
-        "time": "1"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "10-12",
-        "time": "5"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "12-14",
-        "time": "5"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "14-16",
-        "time": "6"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "16-18",
-        "time": "4"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "18-20",
-        "time": "3"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "20-22",
-        "time": "2"
-    },
-    {
-        "date": "Thu",
-        "timeperiod": "22-24",
-        "time": "2"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "8-10",
-        "time": "3"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "10-12",
-        "time": "7"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "12-14",
-        "time": "4"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "14-16",
-        "time": "3"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "16-18",
-        "time": "5"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "18-20",
-        "time": "3"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "20-22",
-        "time": "0"
-    },
-    {
-        "date": "Fri",
-        "timeperiod": "22-24",
-        "time": "1"
-    },
-    {
-        "date": "Sat",
-        "timeperiod": "8-10",
-        "time": "3"
-    },
-    {
-        "date": "Sat",
-        "timeperiod": "10-12",
-        "time": "6"
-    },
-    {
-        "date": "Sat",
-        "timeperiod": "12-14",
-        "time": "4"
-    },
-    {
-        "date": "Sat",
-        "timeperiod": "14-16",
         "time": "8"
     },
     {
+        "date": "Wed",
+        "timeperiod": "20-22",
+        "time": "23"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "6-8",
+        "time": "8"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "8-10",
+        "time": "18"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "10-12",
+        "time": "13"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "12-14",
+        "time": "32"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "14-16",
+        "time": "25"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "16-18",
+        "time": "32"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "18-20",
+        "time": "16"
+    },
+    {
+        "date": "Thu",
+        "timeperiod": "20-22",
+        "time": "37"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "6-8",
+        "time": "10"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "8-10",
+        "time": "20"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "10-12",
+        "time": "22"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "12-14",
+        "time": "15"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "14-16",
+        "time": "28"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "16-18",
+        "time": "24"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "18-20",
+        "time": "15"
+    },
+    {
+        "date": "Fri",
+        "timeperiod": "20-22",
+        "time": "17"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "6-8",
+        "time": "18"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "8-10",
+        "time": "12"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "10-12",
+        "time": "6"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "12-14",
+        "time": "12"
+    },
+    {
+        "date": "Sat",
+        "timeperiod": "14-16",
+        "time": "15"
+    },
+    {
         "date": "Sat",
         "timeperiod": "16-18",
-        "time": "3"
+        "time": "19"
     },
     {
         "date": "Sat",
         "timeperiod": "18-20",
-        "time": "3"
+        "time": "35"
     },
     {
         "date": "Sat",
         "timeperiod": "20-22",
-        "time": "4"
+        "time": "14"
     },
     {
-        "date": "Sat",
-        "timeperiod": "22-24",
-        "time": "2"
+        "date": "Sun",
+        "timeperiod": "6-8",
+        "time": "8"
     },
     {
         "date": "Sun",
         "timeperiod": "8-10",
-        "time": "2"
+        "time": "14"
     },
     {
         "date": "Sun",
         "timeperiod": "10-12",
-        "time": "4"
+        "time": "18"
     },
     {
         "date": "Sun",
         "timeperiod": "12-14",
-        "time": "5"
+        "time": "22"
     },
     {
         "date": "Sun",
         "timeperiod": "14-16",
-        "time": "4"
+        "time": "12"
     },
     {
         "date": "Sun",
         "timeperiod": "16-18",
-        "time": "6"
+        "time": "11"
     },
     {
         "date": "Sun",
         "timeperiod": "18-20",
-        "time": "2"
+        "time": "25"
     },
     {
         "date": "Sun",
         "timeperiod": "20-22",
-        "time": "0"
+        "time": "6"
     },
     {
-        "date": "Sun",
-        "timeperiod": "22-24",
-        "time": "1"
+        "date": "Mon",
+        "timeperiod": "6-8",
+        "time": "19"
     },
     {
         "date": "Mon",
         "timeperiod": "8-10",
-        "time": "0"
+        "time": "19"
     },
     {
         "date": "Mon",
         "timeperiod": "10-12",
-        "time": "2"
+        "time": "31"
     },
     {
         "date": "Mon",
         "timeperiod": "12-14",
-        "time": "1"
+        "time": "16"
     },
     {
         "date": "Mon",
         "timeperiod": "14-16",
-        "time": "4"
-    },
-    {
-        "date": "Mon",
-        "timeperiod": "16-18",
-        "time": "5"
-    },
-    {
-        "date": "Mon",
-        "timeperiod": "18-20",
         "time": "6"
     },
     {
         "date": "Mon",
-        "timeperiod": "20-22",
-        "time": "2"
+        "timeperiod": "16-18",
+        "time": "0"
     },
     {
         "date": "Mon",
-        "timeperiod": "22-24",
-        "time": "7"
+        "timeperiod": "18-20",
+        "time": "3"
+    },
+    {
+        "date": "Mon",
+        "timeperiod": "20-22",
+        "time": "12"
     }
 ]
