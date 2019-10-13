@@ -8,13 +8,14 @@ let margin = 40;
 let bordercolor='#E8E1D3';
 let containerColor = '#DFD1B5';
 
+//svg of icons used
 let svgPhone = '<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 34 77.5" style="enable-background:new 0 0 34 77.5;" xml:space="preserve"><style type="text/css">.st0{fill:#E8E1D3;}</style><title>Phone3</title><g><g><path class="st0" d="M30,0H4C1.8,0,0,1.8,0,4v54c0,2.2,1.8,4,4,4h26c2.2,0,4-1.8,4-4V4C34,1.8,32.2,0,30,0z M32,58c0,1.1-0.9,2-2,2H4c-1.1,0-2-0.9-2-2V4c0-1.1,0.9-2,2-2h26c1.1,0,2,0.9,2,2V58z"/><circle class="st0" cx="11" cy="6" r="1"/><path class="st0" d="M20,5h-6c-0.6,0-1,0.4-1,1s0.4,1,1,1h6c0.6,0,1-0.4,1-1S20.6,5,20,5z"/><path class="st0" d="M17,49c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S19.2,49,17,49z M17,55c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S18.1,55,17,55z"/></g></g></svg>'
 let svgNoPhone = '<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 47 76.2" style="enable-background:new 0 0 47 76.2;" xml:space="preserve"><style type="text/css">.st0{fill:#E8E1D3;}</style><title>No phone5</title><g><g><path class="st0" d="M7,43c0.6,0,1-0.4,1-1V4c0-1.1,0.9-2,2-2h26c1.1,0,2,0.9,2,2v7c0,0.6,0.4,1,1,1s1-0.4,1-1V4c0-2.2-1.8-4-4-4H10C7.8,0,6,1.8,6,4v38C6,42.6,6.4,43,7,43z"/><circle class="st0" cx="17" cy="6" r="1"/><path class="st0" d="M20,5c-0.6,0-1,0.4-1,1s0.4,1,1,1h6c0.6,0,1-0.4,1-1s-0.4-1-1-1H20z"/><path class="st0" d="M46.7,9.3c-0.4-0.4-1-0.4-1.4,0l-45,45c-0.4,0.4-0.5,1-0.1,1.4s1,0.5,1.4,0.1c0,0,0.1-0.1,0.1-0.1L6,51.4V57c0,2.2,1.8,4,4,4h26c2.2,0,4-1.8,4-4V18c0-0.2-0.1-0.3-0.1-0.5l6.8-6.8C47.1,10.3,47.1,9.7,46.7,9.3C46.7,9.3,46.7,9.3,46.7,9.3zM38,57c0,1.1-0.9,2-2,2H10c-1.1,0-2-0.9-2-2v-7c0-0.2-0.1-0.3-0.1-0.5L38,19.4V57z"/></g></g></svg>'
 
-// The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+// The radius of the pieplot is half the width or half the height (smallest one)
 var radius = Math.min(width, height) / 2 - margin;
 
-// append the svg object to the div called 'my_dataviz'
+// append the svg object
 var viz = d3.select("#container")
   .append("svg")
     .attr("width", w)
@@ -26,30 +27,32 @@ var viz = d3.select("#container")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
 ;
 
-// Create dummy data
-var data = {a: 10, b: 14}
+//average daily screen time
+var data = {a: 10, b: 14};
 
 // set the color scale
 var color = d3.scaleOrdinal()
   .domain(data)
   .range(['#5E4F30', '#ABA08A'])
+;
 
+//set the icon scale
 var icon = d3.scaleOrdinal()
   .domain(data)
   .range([svgPhone, svgNoPhone])
 ;
 
-// Compute the position of each group on the pie:
+// compute the position of each group on the pie
 var pie = d3.pie()
   .value(function(d) {return d.value; })
 var data_ready = pie(d3.entries(data))
 
+// build the pie chart
 var arcGenerator = d3.arc()
   .innerRadius(0)
   .outerRadius(radius)
 
-// Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-viz.selectAll('whatever')
+viz.selectAll('arc')
   .data(data_ready)
   .enter()
   .append('path')
@@ -60,6 +63,7 @@ viz.selectAll('whatever')
   // .style("opacity", 0.7)
 ;
 
+//append icons to each part
 let icons = viz.selectAll('icon')
   .data(data_ready)
   .enter()
@@ -73,6 +77,8 @@ let icons = viz.selectAll('icon')
 
 ;
 
+//append text
+//keep only two decimals
 let formatDecimal = d3.format(".2%");
 
 viz.selectAll('text')
@@ -89,7 +95,7 @@ viz.selectAll('text')
 ;
 
 
-
+//add introduction paragraph
 var intro = d3.select(".frame").append("g")
     .attr("class","intro")
     .attr("transform", "translate(" + width + "," + 0 + ")")
@@ -145,7 +151,7 @@ intro.append("text")
     .call(wrap, 500)
 ;
 
-
+//add a "text box" for long paragraph
 function wrap(text, width) {
   text.each(function() {
     let text = d3.select(this),

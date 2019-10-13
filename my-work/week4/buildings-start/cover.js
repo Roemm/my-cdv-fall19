@@ -90,6 +90,7 @@ function gotData(incomingData){
     // .attr('stroke-width', 2)
   ;
 
+  //append a frame
   var borderPath = viz.append("rect")
     .attr("x", 0)
     .attr("y", 0)

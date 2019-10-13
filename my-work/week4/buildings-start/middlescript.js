@@ -3,6 +3,7 @@ let h = 800;
 
 let containerColor = '#DFD1B5';
 
+//create svg
 let viz = d3.select('#container')
   .append('svg')
     .attr('width', w)
@@ -35,16 +36,15 @@ function getColor(datapoint){
 
 function gotData(incomingData){
 
-  //console.log(incomingData);
+  //parse the period time value and create x scale
   let yearToDataConverter = d3.timeParse('%H-%H');
 
   let alterDomainArray = d3.extent(incomingData, function(d){
     return yearToDataConverter(d.timeperiod);
   });
-
    // console.log(alterDomainArray);
 
-  //create x and y axis
+  //create x axis
   let xPadding = 100;
   let xScale = d3.scaleTime().domain(alterDomainArray).range([xPadding, w-(xPadding*1.5)]);
   // console.log(xScale('9-11'));
@@ -65,12 +65,12 @@ function gotData(incomingData){
 
 
   //one array for each value of x-axis
-  // console.log(incomingData);
   let sumstat = d3.nest()
     .key(function(d) { return d.timeperiod;})
     .entries(incomingData);
   console.log(sumstat);
 
+  //stack the data of each day
   var mygroup = [0,1,2,3,4,5];
 
   var stackTheData = d3.stack()
@@ -85,14 +85,11 @@ function gotData(incomingData){
 
   console.log(stackedData);
 
+  //create y axis after data is stacked
   let yScale = d3.scaleLinear()
     .domain([0,d3.max(stackedData[stackedData.length-1], function(d){
       return d[1];
     })]).range([xAxisYPos , 50]);
-
-  // let y = d3.scaleLinear()
-  //     .domain([0, d3.max(incomingData, function(d) { return +d.time; })*1.2])
-  //     .range([ h, 0 ]);
 
   let yAxis = d3.axisLeft(yScale);
   let yAxisGroup = viz.append('g').attr('class', 'yaxis');
@@ -107,6 +104,7 @@ function gotData(incomingData){
 
   let vizGroup = viz.append("g").attr("class", "vizgroup");
 
+  //append area map
   let curve = d3.area()
     .x(function(d, i) {
       console.log( xScale(yearToDataConverter(d.data.key)) );
@@ -124,6 +122,7 @@ function gotData(incomingData){
       .attr("d", curve)
   ;
 
+  //add notations
   let note = d3.select(".chart").append("g")
       .attr("class","note")
   ;
@@ -159,28 +158,3 @@ function gotData(incomingData){
 }
 
 d3.json("data.json").then(gotData);
-
-
-
-
-// // bind data and create groups for each datapoint:
-// let dataGroups = vizGroup.selectAll(".datagroup").data(incomingData).enter()
-//     .append("g")
-//     .attr("class", "datagroup")
-// ;
-//
-//
-// let circles = dataGroups.append("circle")
-//     .attr("cx", 0)
-//     .attr("cy", 0)
-//     .attr("r", 5)
-//     .attr('fill', getColor)
-// ;
-//
-// function getTranslate(d, i){
-//   let properlyFormattedDate = yearToDataConverter(d.timeperiod);
-//   let value = d.time;
-//   return "translate("+xScale(properlyFormattedDate)+","+yScale(value)+")";
-// }
-// // translate the position of each group:
-// dataGroups.attr("transform", getTranslate);

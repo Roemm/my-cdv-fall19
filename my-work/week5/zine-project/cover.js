@@ -27,7 +27,8 @@ function setX(datapoint,i){
 }
 
 function setX2(datapoint,i){
-  // console.log(datapoint.time *10);
+  // set the x position of the second circle
+  //based on the pick up times of each data point
   return 100 * (i % col) + 65 + datapoint.time*1.2;
 }
 
@@ -90,6 +91,7 @@ function gotData(incomingData){
     // .attr('stroke-width', 2)
   ;
 
+  //append a frame
   var borderPath = viz.append("rect")
     .attr("x", 0)
     .attr("y", 0)
