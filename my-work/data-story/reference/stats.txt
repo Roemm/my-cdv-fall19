@@ -1,0 +1,4 @@
+group: GOT7, IZONE, Blackpink, BTS
+viewCounts: 370500.6, 78203.5, 299565.02, 874010.14
+likeCounts: 8443.64, 1468.52, 8542.54, 31725.42
+dislikeCounts: 103.02, 57.74, 263.08, 477.66
