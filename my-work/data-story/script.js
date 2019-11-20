@@ -8,18 +8,28 @@ let viz = d3.select("#container").append("svg")
     .style("background-color", "grey")
 ;
 
+function getChannel(data, code){
+  return data.filter(function(datapoint){
+    if(datapoint.id == code){
+      return true;
+    }else{
+      return false;
+    }
+  });
+}
+
 
 d3.json("reference/countries.geojson").then(function(geoData){
 
-  console.log(geoData.features);
+  // console.log(geoData.features);
 
 
   d3.csv('datasets/BTS_channels.csv').then(function(channelData){
     // let datagroup = [geoData, channelData]
-    // console.log(channelData);
+    console.log(channelData);
 
     var countryList = channelData.map(function(d) {
-      console.log(d.country);
+      // console.log(d.country);
       return d.country;
     })
 
@@ -38,11 +48,21 @@ d3.json("reference/countries.geojson").then(function(geoData){
 
     let pathMaker = d3.geoPath(projection);
 
+    geoData.features.forEach(function(country) {
+      var result = channelData.filter(function(channelCountry) {
+          return channelCountry.country === country.id;
+      });
+      // delete country.id;
+      country.title = (result[0] !== undefined) ? result[0].title : null;
+      });
+    console.log(geoData.features);
+
     let map = viz
-    .selectAll('path').data(geoData.features).enter()
-      .append('path')
-      .attr('d', pathMaker)
-      .attr('fill', 'lavender')
+      .selectAll('path').data(geoData.features).enter()
+        .append('path')
+        .attr('d', pathMaker)
+        .attr('fill', 'lavender')
+      ;
       // .data(channelData)
 
       map
@@ -56,7 +76,7 @@ d3.json("reference/countries.geojson").then(function(geoData){
                 .duration(200)
                 .style("opacity", .9)
             ;
-            box	.html(d.id)
+            box	.html(d.id + "<br/>" + d.title)
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px")
             ;
