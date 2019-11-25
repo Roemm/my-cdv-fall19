@@ -107,6 +107,7 @@ body {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  /* position: absolute; */
 }
 
 .close:hover,
@@ -118,6 +119,7 @@ body {
 
 .flex-container {
   display: flex;
+  width: 100%;
   /* background-color: DodgerBlue; */
 }
 
@@ -127,6 +129,13 @@ body {
   padding: 20px;
   width: 25%;
   text-align: center;
+}
+
+.link{
+  margin-top: 10px;
+}
+.flex-container a{
+  color: #282828;
 }
 
 .tooltip {
