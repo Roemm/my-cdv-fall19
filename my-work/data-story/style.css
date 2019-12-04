@@ -1,6 +1,7 @@
 body {
   font-family: 'Ruda', sans-serif;
-  background-color: #F5F5F5;
+  /* background-color: #F5F5F5; */
+  background-color: black;
 }
 
 .topnav {
@@ -10,7 +11,8 @@ body {
 
 .topnav p {
   float: left;
-  color: #282828;
+  /* color: #282828; */
+  color: #F5F5F5;
   font-size: 20px;
   text-align: center;
   padding: 0px 10px 0px 10px;
@@ -23,9 +25,18 @@ body {
   opacity: 80%;
 }
 
+.topnav a:hover {
+  opacity: 80%;
+}
+
 #title {
   font-size: 40px;
   text-decoration: none;
+  color: #F5F5F5;
+}
+
+#title :hover {
+  opacity: 80%;
 }
 
 .topnav-right {
@@ -107,7 +118,6 @@ body {
   float: right;
   font-size: 28px;
   font-weight: bold;
-  /* position: absolute; */
 }
 
 .close:hover,
@@ -140,17 +150,36 @@ body {
 
 .tooltip {
     position: absolute;
-    text-align: center;
-    width: 60px;
-    height: 28px;
+    /* text-align: center; */
+    width: 350px;
+    height: 350px;
     padding: 2px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
+    font-size: 12px;
+    background: #fefefe;
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
+    line-height: 1.5;
+}
+
+.videoBox {
+    position: absolute;
+    /* text-align: center; */
+    width: 300px;
+    height: 50px;
+    padding: 2px;
+    font-size: 12px;
+    background: #fefefe;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    line-height: 1.5;
 }
 
 #container {
-  border: solid black 1px;
+  /* border: solid black 1px; */
+}
+
+.textGroup tspan{
+  fill: #fefefe;
 }

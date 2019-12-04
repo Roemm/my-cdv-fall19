@@ -28,8 +28,8 @@ function gotData(incomingData){
   viz.selectAll('circle').data(incomingData)
     .enter()
       .append('circle')
-      .attr('cx', randomNumber)
-      .attr('cy', 200)
+      .attr('cx', d3.randomUniform(width/3, width*2/3))
+      .attr('cy', d3.randomUniform(height/3, height*2/3))
       .attr('r', 20)
       .attr('fill', getColor)
   ;
