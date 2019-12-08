@@ -7,16 +7,17 @@
     <title></title>
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-sub.css">
     <link href="https://fonts.googleapis.com/css?family=Ruda&display=swap" rel="stylesheet">
     <!-- include the d3 library -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-ease.v1.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/614fd8b39d.js" crossorigin="anonymous"></script> -->
 
   </head>
   <body>
 
-    <div class="topnav">
+    <div class="topnav" id="navbar">
       <a href="index.html" id="title">FANDOM</a>
 
       <div class="topnav-right">
@@ -85,11 +86,31 @@
 
     </div>
 
-    <div id="container">
+    <div id="wrapper">
 
+
+      <div id="visualization">
+
+      </div>
+
+      <div id="textboxes">
+        <div class="box" id="zero">
+
+        </div>
+        <div class="box" id="one">
+
+        </div>
+        <div class="box" id="two">
+
+        </div>
+      </div>
     </div>
 
+
+
+
     <!-- our main script: -->
-    <script type="text/javascript" src="iz.js"></script>
+    <script type="module" src="leonScroller.js"></script>
+    <script type="module" src="iz.js"></script>
   </body>
 </html>

@@ -30,25 +30,9 @@ let viz = d3.select("#container").append("svg")
 
 
 d3.json("reference/countries.geojson").then(function(world) {
-  // if(error) return console.error(error);
-  // console.log(world);
-
-  // var projection = d3.geoMercator()
-  //   // .scale(100)
-  //   .translate([width/4,height/1.5])
-  //   .rotate([rotated,0,0])
-  //   .fitExtent([ [0, 0], [width, height] ], world)
-  // ; //center on USA
-  //
-  // var path = d3.geoPath().projection(projection);
-  //
-  // var zoom = d3.zoom()
-  // .scaleExtent([1, 10])
-  // .on("zoom", zoomed)
-  // .on("end", zoomended);
 
 
-  d3.csv('datasets/BTS_channels.csv').then(function(channelData){
+  d3.csv('datasets/channels.csv').then(function(channelData){
     // let datagroup = [geoData, channelData]
     // console.log(channelData);
 
@@ -65,7 +49,7 @@ d3.json("reference/countries.geojson").then(function(world) {
 
     var groupNote = [
       {'name': 'BTS',
-        'color' : "#8C203D",
+        'color' : "#ae6277",
         'r': 15
       },
       {'name': 'GOT7',
@@ -77,7 +61,7 @@ d3.json("reference/countries.geojson").then(function(world) {
         'r': 8
       },
       {'name': 'BLACKPINK',
-        'color' : "#3C5C60",
+        'color' : "#59898F",
         'r': 5
       },
     ];
@@ -328,45 +312,6 @@ d3.json("reference/countries.geojson").then(function(world) {
         .style('font-family', "'Ruda', sans-serif")
     ;
 
-
-    // let dots = viz.append('g')
-    //   .attr("class", "dots")
-    //   .selectAll("circle")
-    //   .data(world.features.filter(function(d){return d.properties.channels.length>0;}))
-    //   .enter()
-    //   .append("circle")
-    //   .attr('cx', function(d){
-    //       // console.log(d.id+ " x: "+d.geometry.coordinates[0][2][0]);
-    //       return projection(dotsCor[d.id])[0];
-    //   })
-    //
-    //     // console.log(d);return projection(d.geometry.coordinates[0][0])[0]})
-    //   .attr('cy', function(d){
-    //       // console.log(d.id+ " y: "+d.geometry.coordinates[0][2][1]);
-    //       return projection(dotsCor[d.id])[1];
-    //   })
-    //   .attr('r', 5)
-    //   .attr('fill', "lightblue")
-    // ;
-
-    // dotGroup.on("mouseover",function(d) {
-    //   // console.log("just had a mouseover", d);
-    //
-    //     box.transition()
-    //         .duration(200)
-    //         .style("opacity", .9)
-    //     ;
-    //     box.html("Country Code: " + d.id + "<br/>" + "Channel Title: "+ d.title + "<br/>" + "Subscriber Count: " + d.subscriberCount + "</br>" + "Channel Description: " + d.description)
-    //         .style("left", (d3.event.pageX) + "px")
-    //         .style("top", (d3.event.pageY - 28) + "px")
-    //     ;
-    //   })
-    //   .on("mouseout",function(d){
-    //     box.transition()
-    //         .duration(500)
-    //         .style("opacity", 0)
-    //     ;
-    //   })
 
 });
 });
