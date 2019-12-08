@@ -135,8 +135,8 @@ d3.json("reference/countries.geojson").then(function(world) {
         .attr("class", "dotGroup")
       ;
 
-    var myLogScale = d3.scaleSymlog([0, 4], [0, 1]);
-
+    var myLogScale = d3.scaleSymlog([1, 4], [0.5, 1]);
+    // console.log(myLogScale(0));
 
 
     // console.log(country.properties.channels);
@@ -162,7 +162,12 @@ d3.json("reference/countries.geojson").then(function(world) {
           console.log(country.country + " has " +count);
         } )
         // console.log(logScale(count));
-        return myLogScale(count);
+        if(count == 0 ){
+          return count;
+        } else{
+          return myLogScale(count);
+        }
+
 
       })
     ;
@@ -187,7 +192,11 @@ d3.json("reference/countries.geojson").then(function(world) {
           }
           console.log(country.country + " has " +count);
         } )
-        return myLogScale(count);
+        if(count == 0 ){
+          return count;
+        } else{
+          return myLogScale(count);
+        }
 
       })
     ;
@@ -213,7 +222,11 @@ d3.json("reference/countries.geojson").then(function(world) {
           }
           console.log(country.country + " has " +count);
         } )
-        return myLogScale(count);
+        if(count == 0 ){
+          return count;
+        } else{
+          return myLogScale(count);
+        }
 
       });
     ;
@@ -238,7 +251,11 @@ d3.json("reference/countries.geojson").then(function(world) {
           }
           console.log(country.country + " has " +count);
         } )
-        return myLogScale(count);
+        if(count == 0 ){
+          return count;
+        } else{
+          return myLogScale(count);
+        }
 
       })
     ;
