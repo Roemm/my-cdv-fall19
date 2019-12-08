@@ -1,4 +1,4 @@
-let width = 1200;
+let width = 600;
 let height = 600;
 
 
@@ -6,6 +6,7 @@ let viz = d3.select("#container").append("svg")
     .style("width", width)
     .style("height", height)
 ;
+
 
 let col = 10;
 let xpadding = 20;
@@ -53,26 +54,37 @@ d3.csv('datasets/GOT7_videos.csv').then(function(data){
     .style("opacity", 0)
   ;
 
-  //   var dataset = [];
-  //   for (var i = 0; i < data.length; i++) {
-  //     var x = d3.randomUniform(xpadding, width/2)();
-  //     var y = d3.randomUniform(height/8, height*3/4)();
-  //     dataset.push({"x": x, "y": y});
-  //   }
-  //
-  //
-  //
-  // console.log(dataset);
-  //
-  // // format the data
-  // data.forEach(function(d) {
-  //   d.title = (result[0] !== undefined) ? result[0].title : null;
-  //   d.x = +d.x;
-  //   d.y = +d.y;
-  // });
-  //
-  //
-  //   console.log(data);
+    var dataset = [];
+    for (var i = 0; i < data.length; i++) {
+      var x = d3.randomUniform(xpadding, width/2)();
+      var y = d3.randomUniform(height/8, height*3/4)();
+      dataset.push({"x": x, "y": y});
+    }
+
+
+
+  console.log(dataset);
+
+  // format the data
+  data.forEach(function(d) {
+    d.title = (result[0] !== undefined) ? result[0].title : null;
+    data.x = d.x;
+    data.y = d.y;
+  });
+
+
+  console.log(data);
+
+  world.features.forEach(function(country) {
+    var result = channelData.filter(function(channelCountry) {
+        return channelCountry.country === country.id;
+    });
+    // delete country.id;
+    country.title = (result[0] !== undefined) ? result[0].title : null;
+    country.subscriberCount = (result[0] !== undefined) ? result[0].subscriberCount : null;
+    country.description = (result[0] !== undefined) ? result[0].description : null;
+
+    });
 
 
   let circles = viz.append("g").classed("circles", true);
@@ -80,7 +92,7 @@ d3.csv('datasets/GOT7_videos.csv').then(function(data){
 
 
   circles.selectAll('circle').data(data).enter().append('circle')
-                    .attr('cx',d3.randomUniform(xpadding, width/2))
+                    .attr('cx',d3.randomUniform(xpadding, width-xpadding))
                     .attr('cy', d3.randomUniform(height/8, height*3/4))
                     .attr('r', function(d){return myScale(d.viewCount)})
                     .attr('fill', 'pink')

@@ -98,3 +98,38 @@ d3.json("reference/countries.geojson").then(function(geoData){
   })
 
 })
+
+
+
+// map
+//   .on("mouseover",function(d) {
+//     // console.log("just had a mouseover", d);
+//
+//     if(d.properties.channels.length>0){
+//       d.properties.channels.forEach(function(country){
+//
+//       });
+//       d3.select(this)
+//         .attr('fill', "pink")
+//       ;
+//       box.transition()
+//           .duration(200)
+//           .style("opacity", .9)
+//       ;
+//       box.html("Country Code: " + d.id + "<br/>" + "Channel Title: "+ d.properties.channels.title + "<br/>" + "Subscriber Count: " + d.properties.channels.subscriberCount + "</br>" + "Channel Description: " + d.description)
+//           .style("left", (d3.event.pageX) + "px")
+//           .style("top", (d3.event.pageY - 28) + "px")
+//       ;
+//     }
+//
+//   })
+//   .on("mouseout",function(d){
+//     d3.select(this)
+//       .attr('fill', 'grey')
+//     ;
+//     box.transition()
+//         .duration(500)
+//         .style("opacity", 0)
+//     ;
+//   })
+// ;
