@@ -96,7 +96,7 @@ d3.csv('datasets/Blackpink_videos.csv').then(function(data){
 
   let zero = d3.select("#zero").append("div");
 
-  zero.html('<p>For IZ*ONE, among the top 50 most-viewed videos on Youtube, the highest one has <strong style="font-size: 32px;">' + data[0].viewCount +' </strong>views; the lowest one has <strong style="font-size: 32px;">' + data[49].viewCount +'</strong> views.</p>');
+  zero.html('<p>For BLACKPINK, among the top 50 most-viewed videos on Youtube, the highest one has <strong style="font-size: 32px;">' + data[0].viewCount +' </strong>views; the lowest one has <strong style="font-size: 32px;">' + data[49].viewCount +'</strong> views.</p>');
 
 
   let one = d3.select("#one").append("div");
