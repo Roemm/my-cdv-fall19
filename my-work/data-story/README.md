@@ -26,7 +26,6 @@ By analyzing and visualizing data from fan-created contents uploaded on YouTube,
 
   - For the four individual pages for four groups, I visualized the view counts of each group, as well as the like/dislike ratio. Also, I included a section where you can see the most commonly used category tags for each group, which, to some extent, can reflect what fans care the most about each group.
 
-### Reflection
 
   - **Compromises**
 
@@ -34,6 +33,10 @@ By analyzing and visualizing data from fan-created contents uploaded on YouTube,
 
     - For the map on the first page, I planned to make it more interactive and contains more information, like the data for each individual channel, but I failed to achieve it due to time constrains.
 
-  - **To be Improved**
+### Reflection
 
-    - 
+Looking backwards, I realized that I should have included a contrast page where I put all the four groups together and see how there fan-created contents differ on YouTube, so that it would be clearer to the audience what they can get out of this project.
+
+Also, if I had more time, I would collect more data from more groups and more various aspects of those videos to have a more comprehensive demonstration of the fans and the groups' digital representation.
+
+But still, I am quite glad to have this data visualization built up successfully and find out some interesting insights that can potentially be used in my capstone project.
